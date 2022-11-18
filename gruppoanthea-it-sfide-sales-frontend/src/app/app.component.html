@@ -1,0 +1,18 @@
+<div>
+  <div class="header">
+    <button (click)="showCart = !showCart">
+      <img src="https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG4.png" />
+      <p>{{ getCartQuantity() }} ARTICLES</p>
+    </button>
+  </div>
+  <div class="list-articles">
+    <div *ngFor="let article of articles" class="article">
+      <app-article
+        [article]="article"
+        (addToCartEvent)="addToCart($event)"
+        (removeFromCartEvent)="removeFromCart($event)"></app-article>
+    </div>
+  </div>
+</div>
+
+<app-cart *ngIf="showCart" [carts]="carts" (closeCartEvent)="closeCart()"></app-cart>

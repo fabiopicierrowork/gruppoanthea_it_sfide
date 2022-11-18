@@ -1,0 +1,26 @@
+<div class="overflow"></div>
+<div class="container">
+    <div class="header">
+        <h2>Receipt</h2>
+        <h4 (click)="closeCartEvent.emit();">Close</h4>
+    </div>
+    <hr />
+    <table>
+        <tr>
+            <th>Quantity</th>
+            <th>Imported</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let cart of carts">
+            <td>{{ cart.quantity }}</td>
+            <td>{{ cart.article!.isImported }}</td>
+            <td>{{ cart.article!.name }}</td>
+            <td>{{ cart.price | number:'1.2-2' }} €</td>
+        </tr>
+    </table>
+    <hr />
+
+    <p>Sales Taxes: {{ getSalesTaxes() | number:'1.2-2' }} €</p>
+    <p>Total: {{ getTotal() | number:'1.2-2' }} €</p>
+</div>

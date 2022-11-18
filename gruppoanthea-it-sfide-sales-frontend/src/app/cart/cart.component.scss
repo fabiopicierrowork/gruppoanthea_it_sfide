@@ -1,0 +1,44 @@
+.container {
+    position: absolute;
+    top: 33%;
+    left: 26%;
+    background-color: white;
+    width: 50%;
+    padding: 18px;
+    border-radius: 10px;
+
+    .header {
+        padding: 8px 0px;
+        float: left;
+        width: 100%;
+
+        h2 {
+            width: 70%;
+            float: left;
+            margin: 0;
+        }
+
+        h4 {
+            cursor: pointer;
+            margin: 0;
+            text-align: right;
+        }
+    }
+
+    table {
+        width: 100%;
+
+        td {
+            text-align: center;
+        }
+    }
+}
+
+.overflow {
+    position: absolute;
+    background-color: #22222280;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

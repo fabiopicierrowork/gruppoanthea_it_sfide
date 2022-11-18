@@ -1,0 +1,15 @@
+<div *ngIf="article != null" class="container">
+    <div class="header">
+        <h2>{{ article.name }}</h2>
+    </div>
+    <div class="container-image">
+        <img [src]="article.url" class="image" />
+    </div>
+    <div class="details">
+        <p>Price: {{ article.price | number:'1.2-2' }} €</p>
+        <p>Imported: {{ article.isImported }}</p>
+        <p>Sales Taxes: {{ article.isImported ? article.basicSalesTax! +5 : article.basicSalesTax }}%</p>
+    </div>
+    <input type="button" class="add" value="Add to Cart" (click)="addToCart(article)" />
+    <input type="button" class="remove" value="Remove" [disabled]="quantity <= 0" (click)="removeFromCart(article)" />
+</div>
